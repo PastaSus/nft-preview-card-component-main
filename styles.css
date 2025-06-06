@@ -1,0 +1,345 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin-block-end: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core body defaults */
+body {
+  line-height: 1.5;
+  min-height: 100vh;
+  font-family: Outfit, sans-serif;
+  margin: 0;
+
+  /* 18px */
+  font-size: 1.125rem;
+  color: var(--Blue-500);
+  background-color: var(--Blue-950);
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1,
+h2,
+h3,
+h4,
+button,
+input,
+label {
+  line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1,
+h2,
+h3,
+h4 {
+  text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+
+:root {
+  /* ### Primary */
+
+  --Blue-500: hsl(215, 51%, 70%);
+  --Cyan-400: hsl(178, 100%, 50%);
+
+  /* ### Neutral */
+  --Blue-950: hsl(217, 54%, 11%);
+  --Blue-900: hsl(216, 50%, 16%);
+  --Blue-800: hsl(215, 32%, 27%);
+  --White: hsl(0, 0%, 100%);
+
+  /* - Weights: 300, 400, 600 */
+
+  /* spacing / typo system */
+
+  /* Typography System */
+  --font-size-4: 0.25rem; /* 4px */
+  --font-size-8: 0.5rem; /* 8px */
+  --font-size-10: 0.625rem; /* 10px */
+  --font-size-12: 0.75rem; /* 12px */
+  --font-size-14: 0.875rem; /* 14px */
+  --font-size-16: 1rem; /* 16px */
+  --font-size-18: 1.125rem; /* 18px */
+  --font-size-20: 1.25rem; /* 20px */
+  --font-size-24: 1.5rem; /* 24px */
+  --font-size-30: 1.875rem; /* 30px */
+  --font-size-36: 2.25rem; /* 36px */
+  --font-size-44: 2.75rem; /* 44px */
+  --font-size-52: 3.25rem; /* 52px */
+  --font-size-62: 3.875rem; /* 62px */
+  --font-size-74: 4.625rem; /* 74px */
+  --font-size-86: 5.375rem; /* 86px */
+  --font-size-98: 6.125rem; /* 98px */
+
+  /*Clamping/Scaling Typo scale */
+
+  --clamp-font-20: clamp(1.25rem, 2vw, 1.5rem); /* 20px → scales to 24px */
+  --clamp-font-24: clamp(1.5rem, 2.5vw, 1.875rem); /* 24px → scales to 30px */
+  --clamp-font-30: clamp(1.875rem, 3vw, 2.25rem); /* 30px → scales to 36px */
+  --clamp-font-36: clamp(2.25rem, 3.5vw, 2.75rem); /* 36px → scales to 44px */
+  --clamp-font-44: clamp(2.75rem, 4vw, 3.25rem); /* 44px → scales to 52px */
+  --clamp-font-52: clamp(3.25rem, 5vw, 3.875rem); /* 52px → scales to 62px */
+  --clamp-font-62: clamp(3.875rem, 6vw, 4.625rem); /* 62px → scales to 74px */
+  --clamp-font-74: clamp(4.625rem, 7vw, 5.375rem); /* 74px → scales to 86px */
+  --clamp-font-86: clamp(5.375rem, 8vw, 6.125rem); /* 86px → scales to 98px */
+  --clamp-font-98: clamp(6.125rem, 9vw, 7rem); /* 98px → scales to 112px */
+
+  /* Clamp variations */
+  --clamp-font-24-v2: clamp(1.5rem, 2.5vw, 2.75rem); /* 24px → scales to 44px */
+  --clamp-font-24-v3: clamp(1.5rem, 3vw, 3rem); /* 24px → scales to 48px */
+
+  /* Spacing System */
+  --spacing-2: 0.125rem; /* 2px */
+  --spacing-4: 0.25rem; /* 4px */
+  --spacing-8: 0.5rem; /* 8px */
+  --spacing-12: 0.75rem; /* 12px */
+  --spacing-16: 1rem; /* 16px */
+  --spacing-24: 1.5rem; /* 24px */
+  --spacing-32: 2rem; /* 32px */
+  --spacing-48: 3rem; /* 48px */
+  --spacing-64: 4rem; /* 64px */
+  --spacing-80: 5rem; /* 80px */
+  --spacing-96: 6rem; /* 96px */
+  --spacing-128: 8rem; /* 128px */
+}
+
+.flex {
+  display: flex;
+}
+
+.grid {
+  display: grid;
+}
+
+.container {
+  margin: 0 auto;
+}
+
+.visually-hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.hidden {
+  display: none;
+}
+
+.active {
+  display: block;
+}
+
+/* Utilities above */
+
+.main {
+  height: 100vh;
+
+  place-content: center;
+}
+
+.nft-card {
+  background-color: var(--Blue-900);
+  max-width: 340px;
+  border-radius: 13px;
+
+  padding: var(--spacing-24);
+}
+
+.nft-card__image-wrapper {
+  /* position: relative; */
+}
+
+.nft-card__image {
+  border-radius: 9px;
+  /* cursor: pointer; */
+}
+
+.nft-card__image-link {
+  position: relative;
+
+  place-items: center;
+}
+
+.nft-card__image-link::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  background-color: var(--Cyan-400);
+
+  opacity: 0;
+
+  transition: opacity 0.2s ease-in-out;
+
+  background-repeat: no-repeat;
+  background-position: center;
+
+  border-radius: 9px;
+}
+
+.nft-card__image-link:hover::before {
+  opacity: 0.5;
+}
+
+.nft-card__image-link:hover .nft-card__view-icon {
+  opacity: 1;
+}
+
+.nft-card__view-icon {
+  transition: opacity 0.2s ease-in-out;
+
+  opacity: 0;
+
+  position: absolute;
+}
+
+.nft-card__body {
+}
+
+.nft-card__title {
+  font-weight: 600;
+  color: var(--White);
+}
+
+.nft-card__creator-name {
+  text-decoration: none;
+}
+
+.nft-card__title:hover,
+.nft-card__creator-name:hover {
+  cursor: pointer;
+  color: var(--Cyan-400);
+}
+
+.nft-card__description {
+  font-weight: 300;
+}
+
+.nft-card__meta {
+  justify-content: space-between;
+
+  border-bottom: 1px solid var(--Blue-800);
+
+  padding: var(--spacing-16) 0;
+
+  font-size: var(--font-size-16);
+}
+
+.nft-card__price {
+  align-items: center;
+  gap: var(--spacing-8);
+}
+
+.nft-card__icon {
+}
+
+.nft-card__value {
+  font-weight: 600;
+
+  color: var(--Cyan-400);
+}
+
+.nft-card__time {
+  align-items: center;
+  gap: var(--spacing-8);
+
+  font-weight: 400;
+}
+
+.ft-card__duration {
+}
+
+.nft-card__avatar {
+  width: 35px;
+  height: 35px;
+
+  border-radius: 50%;
+
+  border: 1px solid var(--White);
+}
+
+.nft-card__creator {
+  align-items: center;
+  gap: var(--spacing-12);
+
+  margin-block-start: var(--spacing-16);
+}
+
+.nft-card__creator-text {
+  font-weight: 300;
+  font-size: var(--font-size-16);
+
+  margin: 0;
+}
+
+.nft-card__creator-name {
+  color: var(--White);
+}
